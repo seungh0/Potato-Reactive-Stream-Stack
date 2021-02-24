@@ -1,5 +1,6 @@
 package com.potato.service;
 
+import com.potato.domain.Position;
 import com.potato.domain.Resume;
 import com.potato.domain.ResumeRepository;
 import com.potato.service.dto.request.CreateResumeRequest;
@@ -34,6 +35,7 @@ public class ResumeServiceTest {
 		int studentId = 201610302;
 		String major = "컴퓨터공학과";
 		String introduction = "Will 입니당";
+		Position position = Position.BACKEND;
 
 		CreateResumeRequest request = CreateResumeRequest.testBuilder()
 				.name(name)
@@ -41,6 +43,7 @@ public class ResumeServiceTest {
 				.studentId(studentId)
 				.major(major)
 				.introduction(introduction)
+				.position(position)
 				.build();
 
 		// when
@@ -49,16 +52,17 @@ public class ResumeServiceTest {
 		// then
 		Flux<Resume> resumeFlux = resumeRepository.findAll();
 		StepVerifier.create(resumeFlux)
-				.assertNext(resume -> assertResume(resume, name, contact, studentId, major, introduction))
+				.assertNext(resume -> assertResume(resume, name, contact, studentId, major, introduction, position))
 				.verifyComplete();
 	}
 
-	private void assertResume(Resume resume, String name, String contact, int studentId, String major, String introduction) {
+	private void assertResume(Resume resume, String name, String contact, int studentId, String major, String introduction, Position position) {
 		assertThat(resume.getName()).isEqualTo(name);
 		assertThat(resume.getContact()).isEqualTo(contact);
 		assertThat(resume.getStudentId()).isEqualTo(studentId);
 		assertThat(resume.getMajor()).isEqualTo(major);
 		assertThat(resume.getIntroduction()).isEqualTo(introduction);
+		assertThat(resume.getPosition()).isEqualTo(position);
 	}
 
 }

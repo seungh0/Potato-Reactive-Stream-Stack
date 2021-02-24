@@ -28,4 +28,11 @@ public class ResumeService {
 		return resumeFlux.flatMap(resume -> Flux.just(ResumeInfoResponse.of(resume)));
 	}
 
+	@Transactional(readOnly = true)
+	public Mono<ResumeInfoResponse> retrieveResume(String id) {
+		Mono<Resume> resumeMono = resumeRepository.findById(id);
+		return resumeMono.flatMap(resume -> Mono.just(ResumeInfoResponse.of(resume)))
+				.switchIfEmpty(Mono.error(new IllegalArgumentException(String.format("해당하는 (%s) 지원서는 존재하지 않습니다", id))));
+	}
+
 }

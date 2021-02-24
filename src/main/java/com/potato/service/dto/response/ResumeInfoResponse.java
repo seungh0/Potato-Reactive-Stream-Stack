@@ -1,5 +1,7 @@
 package com.potato.service.dto.response;
 
+import com.potato.common.BaseTimeResponse;
+import com.potato.domain.Position;
 import com.potato.domain.Resume;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +10,7 @@ import lombok.ToString;
 @ToString
 @Getter
 @RequiredArgsConstructor
-public class ResumeInfoResponse {
+public class ResumeInfoResponse extends BaseTimeResponse {
 
 	private final String id;
 
@@ -22,8 +24,13 @@ public class ResumeInfoResponse {
 
 	private final String introduction;
 
+	private final Position position;
+
 	public static ResumeInfoResponse of(Resume resume) {
-		return new ResumeInfoResponse(resume.getId(), resume.getName(), resume.getStudentId(), resume.getContact(), resume.getMajor(), resume.getIntroduction());
+		ResumeInfoResponse response = new ResumeInfoResponse(resume.getId(), resume.getName(), resume.getStudentId(),
+				resume.getContact(), resume.getMajor(), resume.getIntroduction(), resume.getPosition());
+		response.setBaseTimeResponse(resume);
+		return response;
 	}
 
 }
