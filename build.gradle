@@ -1,5 +1,11 @@
+buildscript {
+    ext {
+        springBootVersion = '2.3.8.RELEASE'
+    }
+}
+
 plugins {
-    id 'org.springframework.boot' version '2.4.3'
+    id 'org.springframework.boot' version "${springBootVersion}"
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
@@ -26,6 +32,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
     testImplementation group: 'de.flapdoodle.embed', name: 'de.flapdoodle.embed.mongo', version: '2.2.0'
+    implementation "org.springframework.boot:spring-boot-starter-validation:${springBootVersion}"
 }
 
 test {

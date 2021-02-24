@@ -1,6 +1,5 @@
 package com.potato.controller;
 
-import com.potato.domain.Resume;
 import com.potato.service.ResumeService;
 import com.potato.service.dto.request.CreateResumeRequest;
 import com.potato.service.dto.response.ResumeInfoResponse;
@@ -25,7 +24,7 @@ public class ResumeController {
 
 	@GetMapping("/api/v1/resumes")
 	public Flux<ResumeInfoResponse> getResumes() {
-		return resumeService.getAll();
+		return resumeService.retrieveAllResumes();
 	}
 
 }

@@ -18,13 +18,14 @@ public class ResumeService {
 
 	@Transactional
 	public Mono<ResumeInfoResponse> applyResume(CreateResumeRequest request) {
-		return ResumeInfoResponse.of(resumeRepository.save(request.toEntity()));
+		Mono<Resume> resumeMono = resumeRepository.save(request.toEntity());
+		return resumeMono.flatMap(resume -> Mono.just(ResumeInfoResponse.of(resume)));
 	}
 
 	@Transactional(readOnly = true)
-	public Flux<ResumeInfoResponse> getAll() {
+	public Flux<ResumeInfoResponse> retrieveAllResumes() {
 		Flux<Resume> resumeFlux = resumeRepository.findAll();
-		return resumeFlux.flatMap(ResumeInfoResponse::of);
+		return resumeFlux.flatMap(resume -> Flux.just(ResumeInfoResponse.of(resume)));
 	}
 
 }
