@@ -1,4 +1,4 @@
-package com.potato.common;
+package com.potato.common.dto;
 
 import com.potato.domain.BaseTimeEntity;
 import lombok.Getter;

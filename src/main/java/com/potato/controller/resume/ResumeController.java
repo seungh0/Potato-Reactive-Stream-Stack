@@ -1,8 +1,8 @@
-package com.potato.controller;
+package com.potato.controller.resume;
 
-import com.potato.service.ResumeService;
-import com.potato.service.dto.request.CreateResumeRequest;
-import com.potato.service.dto.response.ResumeInfoResponse;
+import com.potato.service.resume.ResumeService;
+import com.potato.service.resume.dto.request.CreateResumeRequest;
+import com.potato.service.resume.dto.response.ResumeInfoResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;

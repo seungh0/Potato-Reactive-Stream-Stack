@@ -1,9 +1,9 @@
-package com.potato.service;
+package com.potato.service.resume;
 
-import com.potato.domain.Resume;
-import com.potato.domain.ResumeRepository;
-import com.potato.service.dto.request.CreateResumeRequest;
-import com.potato.service.dto.response.ResumeInfoResponse;
+import com.potato.domain.resume.Resume;
+import com.potato.domain.resume.ResumeRepository;
+import com.potato.service.resume.dto.request.CreateResumeRequest;
+import com.potato.service.resume.dto.response.ResumeInfoResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

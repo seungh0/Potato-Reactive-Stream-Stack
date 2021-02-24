@@ -1,9 +1,9 @@
-package com.potato.service;
+package com.potato.service.resume;
 
-import com.potato.domain.Position;
-import com.potato.domain.Resume;
-import com.potato.domain.ResumeRepository;
-import com.potato.service.dto.request.CreateResumeRequest;
+import com.potato.domain.resume.Position;
+import com.potato.domain.resume.Resume;
+import com.potato.domain.resume.ResumeRepository;
+import com.potato.service.resume.dto.request.CreateResumeRequest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

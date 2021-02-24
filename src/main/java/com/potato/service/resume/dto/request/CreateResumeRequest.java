@@ -1,7 +1,7 @@
-package com.potato.service.dto.request;
+package com.potato.service.resume.dto.request;
 
-import com.potato.domain.Position;
-import com.potato.domain.Resume;
+import com.potato.domain.resume.Position;
+import com.potato.domain.resume.Resume;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

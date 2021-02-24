@@ -1,8 +1,8 @@
-package com.potato.service.dto.response;
+package com.potato.service.resume.dto.response;
 
-import com.potato.common.BaseTimeResponse;
-import com.potato.domain.Position;
-import com.potato.domain.Resume;
+import com.potato.common.dto.BaseTimeResponse;
+import com.potato.domain.resume.Position;
+import com.potato.domain.resume.Resume;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;

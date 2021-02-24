@@ -1,4 +1,4 @@
-package com.potato.domain;
+package com.potato.domain.resume;
 
 public enum Position {
 

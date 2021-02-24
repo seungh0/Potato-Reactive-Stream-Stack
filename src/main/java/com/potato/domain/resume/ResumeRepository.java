@@ -1,4 +1,4 @@
-package com.potato.domain;
+package com.potato.domain.resume;
 
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;

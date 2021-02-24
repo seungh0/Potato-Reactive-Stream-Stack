@@ -1,5 +1,6 @@
-package com.potato.domain;
+package com.potato.domain.resume;
 
+import com.potato.domain.BaseTimeEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
