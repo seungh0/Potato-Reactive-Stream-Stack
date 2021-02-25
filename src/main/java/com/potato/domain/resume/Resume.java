@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Document(collection = "resume")
+@Document(collection = "resumes")
 public class Resume extends BaseTimeEntity {
 
 	@Id
