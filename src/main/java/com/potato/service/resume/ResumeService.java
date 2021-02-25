@@ -24,7 +24,7 @@ public class ResumeService {
 
 	@Transactional(readOnly = true)
 	public Flux<ResumeInfoResponse> retrieveAllResumes() {
-		Flux<Resume> resumeFlux = resumeRepository.findAll();
+		Flux<Resume> resumeFlux = resumeRepository.findAllResumes();
 		return resumeFlux.flatMap(resume -> Flux.just(ResumeInfoResponse.of(resume)));
 	}
 
