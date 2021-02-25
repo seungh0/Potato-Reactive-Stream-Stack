@@ -35,8 +35,7 @@ public class ResumeRepositoryTest {
 		// then
 		StepVerifier.create(resumeFlux)
 				.assertNext(r -> assertThat(r.getName()).isEqualTo(name))
-				.expectComplete()
-				.verify();
+				.verifyComplete();
 	}
 
 }
